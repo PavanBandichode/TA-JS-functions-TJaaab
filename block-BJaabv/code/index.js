@@ -8,8 +8,9 @@
   * [ ] Add an additional argument to the function that takes the conversion rate of human to dog years.
 */
 
-function calculateDogAge() {
-  // Your code goes here
+function calculateDogAge(age) {
+  conversionRate=age*7;
+  return `${age} ${conversionRate}`;
 }
 
 /*
@@ -19,8 +20,10 @@ function calculateDogAge() {
   * [ ] Return the total number of movie you will watch.
 */
 
-function calculateMoviesToWatch() {
-  // Your code goes here
+function calculateMoviesToWatch(age,noOfMovies) {
+  const maxAge=80;
+  let restMovies=(maxAge-age)*noOfMovies;
+  return `movies for rest of life is ${restMovies}`;
 }
 
 /*
@@ -29,18 +32,9 @@ function calculateMoviesToWatch() {
   * [ ] Convert it to fahrenheit and return "NN°F is NN°C"
 */
 
-function celsiusToFahrenheit() {
-  // Your code goes here
-}
-
-/*
-4. 🎖Create a function called fahrenheitToCelsius:
-  * [ ] Accepts fahrenheit temperature as argument.
-  * [ ] Convert it to celsius and return "NN°F is NN°C"
-*/
-
-function celsiusToFahrenheit() {
-  // Your code goes here
+function celsiusToFahrenheit(celsius) {
+  let farenheit=(9/5)*celsius+32;
+  return `${farenheit}°F is ${celsius}°C`
 }
 
 /*
@@ -51,10 +45,18 @@ function celsiusToFahrenheit() {
   * [ ] If the value of n is below 0 return "The number below 1 is not allowed"
 */
 
-function pow() {
-  // Your code goes here
+function pow(n ,x) {
+ if(n>0){
+  for(x=1;x<=n;x++){
+    n=n*n;
+    return `${x} times ${n}`;
+  }
+ }
+ 
+else{
+  alert("The number below 1 is not allowed");
 }
-
+}
 // Test
 pow(3, 2); // 9
 pow(3, 3); // 27
@@ -78,8 +80,12 @@ sumOrProductOfN(4, 'hello'); // alert "Not a valid Input"
 6. 🎖Write a program that accepts a number n using argument and return the sum of the numbers 1 to n
 */
 
-function sumOfN() {
-  // Your code goes here
+function sumOfN(n) {
+ for(let i=1;i<=n;i++){
+   i+=i;
+   
+ }
+ return `the sum of the numbers 1 to ${n}=${i}`
 }
 
 /*
@@ -92,8 +98,12 @@ function sumOfN() {
 8. 🎖Write a function `min` that takes two arguments and returns their minimum.
 */
 
-function min() {
-  // Your code goes here
+function min(num1,num2) {
+if(num1>num2){
+  return num2;
+}else{
+  return num1;
+}
 }
 
 min(0, 10);
@@ -103,6 +113,7 @@ min(0, -10);
 9. 🎖Write a JavaScript function which accepts an argument and returns the type of the value.
 */
 
-function typeCheck() {
-  // Your code goes here
+function typeCheck(argument) {
+  let type= typeof argument;
+  return type; 
 }
