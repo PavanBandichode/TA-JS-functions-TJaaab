@@ -11,8 +11,9 @@ minToSec(2) ➞ 120
 */
 
 // - Write a Function Decleration for above problem
-function minToSec() {
-  // Your code
+function minToSec(minute) {
+ let sec=minute*60;
+ return sec;
 }
 // - Execute the function with required parameter
 
@@ -26,8 +27,12 @@ isInRange(1, 10, 19); // false
 */
 
 // - Write a Function Decleration for above problem
-function isInRange() {
-  // Your code
+function isInRange(lower,upper,number) {
+ if(upper>=number>=lower){
+   return "true";
+ }else{
+   return "false";
+ }
 }
 // - Execute the function with required parameter
 
@@ -49,8 +54,17 @@ Obese: BMI is 30 or more
 
 */
 
-function calculateBMI() {
-  // Your code
+function calculateBMI(weight,height){
+  let BMI=weight / (height * height);
+  if(BMI>30){
+    return "obese";
+  }else if(29.9>BMI>25){
+    return "OverWeight";
+  }else if(24.9>BMI>18.5){
+    return "Normal weight";
+  }else{
+    return "Underweight";
+  }
 }
 
 /* 3. appropiateDrinks
@@ -64,8 +78,16 @@ Create a function that take the age are return the appropiate drink based on the
 
 */
 
-function appropiateDrinks() {
-  // Your code
+function appropiateDrinks(age) {
+  if(age>21){
+    return "drink throat-piercing vodka";
+  }else if(21>=age>=18){
+    return "drink fruit-flavored beer";
+  }else if(18>=age>=14){
+    return "drink soda";
+  }else{
+    return "drink fruit juice";
+  }
 }
 
 /* 4. Add two numers or string
