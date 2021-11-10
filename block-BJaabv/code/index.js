@@ -46,15 +46,12 @@ function celsiusToFahrenheit(celsius) {
 */
 
 function pow(n ,x) {
- if(n>0){
-  for(x=1;x<=n;x++){
-    n=n*n;
-    return `${x} times ${n}`;
-  }
+ if(n<0){
+  return "The number below 1 is not allowed";
  }
  
 else{
-  alert("The number below 1 is not allowed");
+ return x ** n;
 }
 }
 // Test
@@ -68,8 +65,23 @@ pow(-31, 2); // "The number below 1 is not allowed"
 and return sum or product of 1,…,n. If user enters any other value than `sum` or `product` alert `Not a valid Input`.
 */
 
-function sumOrProductOfN() {
-  // Your code goes here
+function sumOrProductOfN(num,operation) {
+  switch(operation){
+    case "sum":
+      let sum=0;
+      for(i=1;i<=num;i++){
+        sum +=i;
+      }
+      return sum;
+    case "product":
+      let product =1;
+      for(i=1;i<=num;i++){
+        product *=i;
+      }
+      return product;
+    default:
+      alert(`Not a valid Input`);
+  }
 }
 
 sumOrProductOfN(4, 'sum'); // 10
@@ -81,11 +93,11 @@ sumOrProductOfN(4, 'hello'); // alert "Not a valid Input"
 */
 
 function sumOfN(n) {
+  let sum=0;
  for(let i=1;i<=n;i++){
-   i+=i;
-   
+   sum+=i; 
  }
- return `the sum of the numbers 1 to ${n}=${i}`
+ return `the sum of the numbers 1 to ${n}=${sum}`;
 }
 
 /*
@@ -93,7 +105,15 @@ function sumOfN(n) {
 */
 
 // Your code goes here
-
+function sumOfNWithFive(n) {
+  let sum=0;
+ for(let i=1;i<=n;i++){
+   if(i%5==0 || i%7==0){
+    sum+=i;
+   }
+ }
+ return `the sum of the numbers 1 to ${n}=${sum}`;
+}
 /*
 8. 🎖Write a function `min` that takes two arguments and returns their minimum.
 */
